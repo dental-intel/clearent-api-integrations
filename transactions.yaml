@@ -1171,12 +1171,12 @@ components:
       example: '85284'
       type: string
   securitySchemes:
-    ApiKeyAuth:
+    AccessKeyAuth:
       in: header
       name: api-key
       type: apiKey
 info:
-  title: Clearent API
+  title: Clearent Transactions API
   version: '1.0'
 openapi: 3.0.2
 paths:
@@ -1254,24 +1254,8 @@ paths:
           description: Forbidden
       tags:
         - Transactions
-  /standard/merchants:
-    get:
-      operationId: reportsMerchants
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SingleTransactionResponse'
-          description: OK
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-      tags:
-        - Transactions
 security:
-  - ApiKeyAuth: []
+  - AccessKeyAuth: []
 servers:
   - url: https://gateway-sb.clearent.net
   - url: https://gateway.clearent.net

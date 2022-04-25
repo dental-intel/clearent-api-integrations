@@ -6,6 +6,12 @@ editor:
 generate:
 	@docker run --rm \
   		-v ${PWD}:/local openapitools/openapi-generator-cli generate \
-  		-i /local/api.yaml \
+  		-i /local/transactions.yaml \
+  		-g php \
+  		-o /local/app
+
+	@docker run --rm \
+  		-v ${PWD}:/local openapitools/openapi-generator-cli generate \
+  		-i /local/merchants.yaml \
   		-g php \
   		-o /local/app
