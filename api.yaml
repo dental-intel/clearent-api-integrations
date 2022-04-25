@@ -1111,15 +1111,6 @@ components:
       description: The description of the token.
       example: This token is awesome.
       type: string
-    track-format:
-      description: The format of the Encrypted Track Data being passed into the transaction request.
-      enum:
-        - MAGTEK
-        - IDTECH
-        - DEJAVOO
-        - PAX
-      example: MAGTEK
-      type: string
     transaction-certificate:
       type: string
     transaction-status-information:
@@ -1266,11 +1257,6 @@ paths:
   /standard/merchants:
     get:
       operationId: reportsMerchants
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/SaleTransactionPayload'
       responses:
         '200':
           content:

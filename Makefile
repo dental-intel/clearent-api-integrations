@@ -7,5 +7,5 @@ generate:
 	@docker run --rm \
   		-v ${PWD}:/local openapitools/openapi-generator-cli generate \
   		-i /local/api.yaml \
-  		-g csharp \
+  		-g php \
   		-o /local/app
