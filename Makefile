@@ -8,10 +8,10 @@ generate:
   		-v ${PWD}:/local openapitools/openapi-generator-cli generate \
   		-i /local/transactions.yaml \
   		-g php \
-  		-o /local/app
+  		-o /local/app/transactions
 
 	@docker run --rm \
   		-v ${PWD}:/local openapitools/openapi-generator-cli generate \
-  		-i /local/merchants.yaml \
+  		-i /local/integration.yaml \
   		-g php \
-  		-o /local/app
+  		-o /local/app/integration
