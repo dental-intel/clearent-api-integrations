@@ -30,8 +30,8 @@ jobs:
           swagger-editor-url: http://localhost/
           definition-file: transactions.yaml
 
-      - name: Validate OpenAPI definition - merchants
+      - name: Validate OpenAPI definition - integration
         uses: char0n/swagger-editor-validate@v1
         with:
           swagger-editor-url: http://localhost/
-          definition-file: merchants.yaml
+          definition-file: integration.yaml
