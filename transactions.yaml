@@ -1025,6 +1025,7 @@ components:
         - APPROVED
         - DECLINED
         - ERROR
+        - DECLINED_BY_ISSUER_REFERRED_PLEASE_CALL_CARD_ISSUER
       example: APPROVED
       type: string
     result-code:
@@ -1129,6 +1130,7 @@ components:
         - REFUND
         - SALE
         - VOID
+        - UNMATCHED REFUND
       example: AUTH
       type: string
     type.refundTransaction:
@@ -1173,7 +1175,7 @@ components:
       example: '85284'
       type: string
   securitySchemes:
-    AccessKeyAuth:
+    ApiKeyAuth:
       in: header
       name: api-key
       type: apiKey
@@ -1257,7 +1259,7 @@ paths:
       tags:
         - Transactions
 security:
-  - AccessKeyAuth: []
+  - ApiKeyAuth: []
 servers:
   - url: https://gateway-sb.clearent.net
   - url: https://gateway.clearent.net
