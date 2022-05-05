@@ -1,0 +1,79 @@
+---
+components:
+  parameters:
+    hierarchyNodeKeyParam:
+      in: path
+      name: hierarchyNodeKey
+      required: true
+      schema:
+        example: '6588000000001003'
+        type: string
+  schemas:
+    CreateMerchantPayload:
+      additionalProperties: false
+      properties:
+        merchantInformation:
+          $ref: '#/components/schemas/MerchantInformation'
+        salesProfile:
+          $ref: '#/components/schemas/SalesProfile'
+      type: object
+    MerchantInformation:
+      additionalProperties: false
+      properties:
+        dbaName:
+          $ref: '#/components/schemas/dbaName'
+        emailAddress:
+          $ref: '#/components/schemas/emailAddress'
+      type: object
+    SalesProfile:
+      additionalProperties: false
+      properties:
+        mccCode:
+          $ref: '#/components/schemas/mccCode'
+      type: object
+    dbaName:
+      example: Pizza and Joints Family Restaurant
+      type: string
+    emailAddress:
+      example: tphillips@dentalintel.com
+      type: string
+    mccCode:
+      description: The Merchant Category Code (MCC) of the merchant. The MCC is a 4-digit number used to classify merchants and businesses by the type of goods or services provided.
+      example: '8021'
+      type: string
+  securitySchemes:
+    AccessKeyAuth:
+      in: header
+      name: AccessKey
+      type: apiKey
+info:
+  title: Clearent Integrations API
+  version: '1.0'
+openapi: 3.0.2
+paths:
+  /api/launchIntegratorSetup/v1.0/integrateMerchant/{hierarchyNodeKey}:
+    post:
+      operationId: createMerchant
+      parameters:
+        - $ref: '#/components/parameters/hierarchyNodeKeyParam'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateMerchantPayload'
+      responses:
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      tags:
+        - Merchants
+security:
+  - AccessKeyAuth: []
+servers:
+  - url: https://boarding-sb.clearent.net
+  - url: https://boarding.clearent.net
+tags:
+  - name: Merchants
