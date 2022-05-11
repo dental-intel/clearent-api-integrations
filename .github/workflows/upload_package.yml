@@ -1,4 +1,4 @@
-name: OpenAPI Validation
+name: Upload Package to Fury
 
 on:
   push:
@@ -17,5 +17,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Validate OpenAPI definitions
-        run: make validate
+      - name: Upload Package
+        run: make upload_package
