@@ -30,6 +30,4 @@ validate:
 
 .PHONY: upload_package
 upload_package:
-	@make generate
-	@git remote add fury https://1ZaWV8-23bQFkQemh7hq5T49knnAGaaE@php.fury.io/localmed/clearent_api_openapi.git
-	@git push --tags fury master
+	@make generate && git remote add fury https://1ZaWV8-23bQFkQemh7hq5T49knnAGaaE@php.fury.io/localmed/clearent_api_openapi.git && git push --tags fury master
