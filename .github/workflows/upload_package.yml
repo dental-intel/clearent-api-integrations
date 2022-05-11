@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  openapi_validation:
+  upload_package:
     runs-on: ubuntu-latest
 
     steps:
