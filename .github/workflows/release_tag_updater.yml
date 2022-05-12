@@ -18,5 +18,6 @@ jobs:
       - name: Create A New Release Tag
         uses: sersoft-gmbh/running-release-tags-action@v1
         with:
+          fail-on-non-semver-tag: true
           github-token: ${{secrets.GITHUB_TOKEN}}
           tag: 0.1.1
