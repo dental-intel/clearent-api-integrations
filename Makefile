@@ -4,27 +4,15 @@ editor:
 
 .PHONY: generate
 generate:
-	@rm -rf ClearentAPI/
 	@docker run --rm \
   		-v ${PWD}:/local openapitools/openapi-generator-cli generate \
   		-i /local/integrations.yaml \
   		-g php \
-  		-o /local/ClearentAPI/integrations \
+  		-o /local \
 		--package-name ClearentIntegrationsApi
-
-	@docker run --rm \
-  		-v ${PWD}:/local openapitools/openapi-generator-cli generate \
-  		-i /local/transactions.yaml \
-  		-g php \
-  		-o /local/ClearentAPI/transactions \
-		--package-name ClearentTransactionsApi
 
 .PHONY: validate
 validate:
 	@docker run --rm \
   		-v ${PWD}:/local openapitools/openapi-generator-cli validate \
 		-i /local/integrations.yaml
-
-	@docker run --rm \
-  		-v ${PWD}:/local openapitools/openapi-generator-cli validate \
-		-i /local/transactions.yaml
