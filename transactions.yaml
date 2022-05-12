@@ -1181,7 +1181,9 @@ components:
       type: apiKey
 info:
   title: Clearent Transactions API
-  version: '1.0'
+  version: '1.0.0'
+  license:
+    name: Unlicensed
 openapi: 3.0.2
 paths:
   /rest/v2/transactions:
