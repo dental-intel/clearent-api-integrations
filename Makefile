@@ -30,5 +30,5 @@ validate:
 
 .PHONY: upload_package
 upload_package:
-	@git remote add fury https://trevorphillipscoding@git.fury.io/trevorphillipscoding/clearent_api_openapi.git
+	@git remote add fury https://trevorphillipscoding@git.fury.io/trevorphillipscoding/clearent.git
 	@git push --tags fury master
