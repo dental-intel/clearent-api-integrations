@@ -15,7 +15,7 @@ generate:
 	@docker run --rm \
   		-v ${PWD}:/local openapitools/openapi-generator-cli generate \
   		-i /local/transactions.yaml \
-  		-g python \
+  		-g php \
   		-o /local/ClearentAPI/transactions \
 		--package-name ClearentTransactionsApi
 
