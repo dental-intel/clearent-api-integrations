@@ -7,15 +7,15 @@ generate:
 	@docker run --rm \
   		-v ${PWD}:/local openapitools/openapi-generator-cli generate \
   		-i /local/transactions.yaml \
-  		-g python \
-  		-o /local/app/transactions \
+  		-g php \
+  		-o /local/ClearentAPI/transactions \
 		--package-name ClearentTransactionsApi
 
 	@docker run --rm \
   		-v ${PWD}:/local openapitools/openapi-generator-cli generate \
   		-i /local/integrations.yaml \
-  		-g python \
-  		-o /local/app/integrations \
+  		-g php \
+  		-o /local/ClearentAPI/integrations \
 		--package-name ClearentIntegrationsApi
 
 .PHONY: validate
@@ -30,6 +30,5 @@ validate:
 
 .PHONY: upload_package
 upload_package:
-	@make generate
 	@git remote add fury https://trevorphillipscoding@git.fury.io/trevorphillipscoding/clearent_api_openapi.git
 	@git push --tags fury master
