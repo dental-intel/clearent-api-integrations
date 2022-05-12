@@ -53,7 +53,9 @@ components:
       type: apiKey
 info:
   title: Clearent Integrations API
-  version: '1.0'
+  version: '1.0.0'
+  license:
+    name: Unlicensed
 openapi: 3.0.2
 paths:
   /api/launchIntegratorSetup/v1.0/integrateMerchant/{hierarchyNodeKey}:
