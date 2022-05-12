@@ -30,5 +30,5 @@ validate:
 
 .PHONY: upload_package
 upload_package:
-	@git remote add fury https://trevorphillipscoding@git.fury.io/trevorphillipscoding/clearent.git
-	@git push --tags fury master
+	@zip -r clearent_transactions.zip ${PWD}/ClearentAPI/transactions -x '${PWD}/.svn/*'
+	@curl -F package=@clearent_transactions.zip https://1BOjEL-5L83jhrQ1t8SSyZr19t4ee79I@php.fury.io/trevorphillipscoding/
