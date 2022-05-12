@@ -16,6 +16,9 @@ components:
           $ref: '#/components/schemas/MerchantInformation'
         salesProfile:
           $ref: '#/components/schemas/SalesProfile'
+      required:
+        - merchantInformation
+        - salesProfile
       type: object
     MerchantInformation:
       additionalProperties: false
@@ -30,6 +33,8 @@ components:
       properties:
         mccCode:
           $ref: '#/components/schemas/mccCode'
+      required:
+        - mccCode
       type: object
     dbaName:
       example: Pizza and Joints Family Restaurant
