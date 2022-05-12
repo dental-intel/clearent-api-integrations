@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Create A New Release Tag
         uses: sersoft-gmbh/running-release-tags-action@v1
         with:
