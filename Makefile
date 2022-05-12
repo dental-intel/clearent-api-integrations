@@ -9,6 +9,9 @@ generate:
   		-i /local/integrations.yaml \
   		-g php \
   		-o /local \
+		--git-host github.com \
+		--git-repo-id clearent-api-integrations \
+		--git-user-id dental-intel \
 		--package-name ClearentIntegrationsApi
 
 .PHONY: validate

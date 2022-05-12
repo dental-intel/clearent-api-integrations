@@ -20,4 +20,4 @@ jobs:
         with:
           fail-on-non-semver-tag: true
           github-token: ${{secrets.GITHUB_TOKEN}}
-          tag: 0.1.0
+          tag: 0.2.0
