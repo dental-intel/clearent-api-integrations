@@ -5,7 +5,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  ClearentIntegrationsApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace ClearentIntegrationsApi\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \ClearentIntegrationsApi\ObjectSerializer;
 
 /**
  * CreateMerchantPayload Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  ClearentIntegrationsApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<TKey, TValue>
@@ -59,8 +59,8 @@ class CreateMerchantPayload implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'merchant_information' => '\OpenAPI\Client\Model\MerchantInformation',
-        'sales_profile' => '\OpenAPI\Client\Model\SalesProfile'
+        'merchant_information' => '\ClearentIntegrationsApi\Model\MerchantInformation',
+        'sales_profile' => '\ClearentIntegrationsApi\Model\SalesProfile'
     ];
 
     /**
@@ -220,7 +220,7 @@ class CreateMerchantPayload implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets merchant_information
      *
-     * @return \OpenAPI\Client\Model\MerchantInformation
+     * @return \ClearentIntegrationsApi\Model\MerchantInformation
      */
     public function getMerchantInformation()
     {
@@ -230,7 +230,7 @@ class CreateMerchantPayload implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets merchant_information
      *
-     * @param \OpenAPI\Client\Model\MerchantInformation $merchant_information merchant_information
+     * @param \ClearentIntegrationsApi\Model\MerchantInformation $merchant_information merchant_information
      *
      * @return self
      */
@@ -244,7 +244,7 @@ class CreateMerchantPayload implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets sales_profile
      *
-     * @return \OpenAPI\Client\Model\SalesProfile
+     * @return \ClearentIntegrationsApi\Model\SalesProfile
      */
     public function getSalesProfile()
     {
@@ -254,7 +254,7 @@ class CreateMerchantPayload implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets sales_profile
      *
-     * @param \OpenAPI\Client\Model\SalesProfile $sales_profile sales_profile
+     * @param \ClearentIntegrationsApi\Model\SalesProfile $sales_profile sales_profile
      *
      * @return self
      */

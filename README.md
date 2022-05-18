@@ -50,19 +50,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: AccessKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('AccessKey', 'YOUR_API_KEY');
+$config = ClearentIntegrationsApi\Configuration::getDefaultConfiguration()->setApiKey('AccessKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AccessKey', 'Bearer');
+// $config = ClearentIntegrationsApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AccessKey', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\MerchantsApi(
+$apiInstance = new ClearentIntegrationsApi\Api\MerchantsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $hierarchy_node_key = 6588000000001003; // string
-$create_merchant_payload = new \OpenAPI\Client\Model\CreateMerchantPayload(); // \OpenAPI\Client\Model\CreateMerchantPayload
+$create_merchant_payload = new \ClearentIntegrationsApi\Model\CreateMerchantPayload(); // \ClearentIntegrationsApi\Model\CreateMerchantPayload
 
 try {
     $apiInstance->createMerchant($hierarchy_node_key, $create_merchant_payload);

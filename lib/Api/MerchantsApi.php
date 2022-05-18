@@ -4,7 +4,7 @@
  * PHP version 7.3
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  ClearentIntegrationsApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace ClearentIntegrationsApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use ClearentIntegrationsApi\ApiException;
+use ClearentIntegrationsApi\Configuration;
+use ClearentIntegrationsApi\HeaderSelector;
+use ClearentIntegrationsApi\ObjectSerializer;
 
 /**
  * MerchantsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  ClearentIntegrationsApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -119,9 +119,9 @@ class MerchantsApi
      * Operation createMerchant
      *
      * @param  string $hierarchy_node_key hierarchy_node_key (required)
-     * @param  \OpenAPI\Client\Model\CreateMerchantPayload $create_merchant_payload create_merchant_payload (optional)
+     * @param  \ClearentIntegrationsApi\Model\CreateMerchantPayload $create_merchant_payload create_merchant_payload (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ClearentIntegrationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -134,9 +134,9 @@ class MerchantsApi
      * Operation createMerchantWithHttpInfo
      *
      * @param  string $hierarchy_node_key (required)
-     * @param  \OpenAPI\Client\Model\CreateMerchantPayload $create_merchant_payload (optional)
+     * @param  \ClearentIntegrationsApi\Model\CreateMerchantPayload $create_merchant_payload (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \ClearentIntegrationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -192,7 +192,7 @@ class MerchantsApi
      * Operation createMerchantAsync
      *
      * @param  string $hierarchy_node_key (required)
-     * @param  \OpenAPI\Client\Model\CreateMerchantPayload $create_merchant_payload (optional)
+     * @param  \ClearentIntegrationsApi\Model\CreateMerchantPayload $create_merchant_payload (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -211,7 +211,7 @@ class MerchantsApi
      * Operation createMerchantAsyncWithHttpInfo
      *
      * @param  string $hierarchy_node_key (required)
-     * @param  \OpenAPI\Client\Model\CreateMerchantPayload $create_merchant_payload (optional)
+     * @param  \ClearentIntegrationsApi\Model\CreateMerchantPayload $create_merchant_payload (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -248,7 +248,7 @@ class MerchantsApi
      * Create request for operation 'createMerchant'
      *
      * @param  string $hierarchy_node_key (required)
-     * @param  \OpenAPI\Client\Model\CreateMerchantPayload $create_merchant_payload (optional)
+     * @param  \ClearentIntegrationsApi\Model\CreateMerchantPayload $create_merchant_payload (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
