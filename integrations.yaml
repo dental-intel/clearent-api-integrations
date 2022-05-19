@@ -27,6 +27,9 @@ components:
           $ref: '#/components/schemas/dbaName'
         emailAddress:
           $ref: '#/components/schemas/emailAddress'
+      required:
+        - dbaName
+        - emailAddress
       type: object
     SalesProfile:
       additionalProperties: false
@@ -52,10 +55,10 @@ components:
       name: AccessKey
       type: apiKey
 info:
-  title: Clearent Integrations API
-  version: '1.0.0'
   license:
     name: Unlicensed
+  title: Clearent Integrations API
+  version: 1.0.0
 openapi: 3.0.2
 paths:
   /api/launchIntegratorSetup/v1.0/integrateMerchant/{hierarchyNodeKey}:

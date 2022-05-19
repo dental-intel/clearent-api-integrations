@@ -196,6 +196,12 @@ class MerchantInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
+        if ($this->container['dba_name'] === null) {
+            $invalidProperties[] = "'dba_name' can't be null";
+        }
+        if ($this->container['email_address'] === null) {
+            $invalidProperties[] = "'email_address' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -214,7 +220,7 @@ class MerchantInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets dba_name
      *
-     * @return string|null
+     * @return string
      */
     public function getDbaName()
     {
@@ -224,7 +230,7 @@ class MerchantInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets dba_name
      *
-     * @param string|null $dba_name dba_name
+     * @param string $dba_name dba_name
      *
      * @return self
      */
@@ -238,7 +244,7 @@ class MerchantInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets email_address
      *
-     * @return string|null
+     * @return string
      */
     public function getEmailAddress()
     {
@@ -248,7 +254,7 @@ class MerchantInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets email_address
      *
-     * @param string|null $email_address email_address
+     * @param string $email_address email_address
      *
      * @return self
      */
