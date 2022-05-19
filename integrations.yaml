@@ -19,6 +19,12 @@ components:
         - merchantInformation
         - salesProfile
       type: object
+    CreateMerchantResponse:
+      properties:
+        applicationURL:
+          example: https://boarding-sb.clearent.net/launch-integrator-setup/merchant/680eccd8-5836-410d-a632-ffad378e3ee9
+          type: string
+      type: object
     MerchantInformation:
       additionalProperties: false
       properties:
@@ -73,6 +79,10 @@ paths:
         required: true
       responses:
         '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateMerchantResponse'
           description: Created
         '401':
           description: Unauthorized

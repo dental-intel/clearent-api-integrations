@@ -123,11 +123,12 @@ class MerchantsApi
      *
      * @throws \ClearentIntegrationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \ClearentIntegrationsApi\Model\CreateMerchantResponse
      */
     public function createMerchant($hierarchy_node_key, $create_merchant_payload)
     {
-        $this->createMerchantWithHttpInfo($hierarchy_node_key, $create_merchant_payload);
+        list($response) = $this->createMerchantWithHttpInfo($hierarchy_node_key, $create_merchant_payload);
+        return $response;
     }
 
     /**
@@ -138,7 +139,7 @@ class MerchantsApi
      *
      * @throws \ClearentIntegrationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ClearentIntegrationsApi\Model\CreateMerchantResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createMerchantWithHttpInfo($hierarchy_node_key, $create_merchant_payload)
     {
@@ -179,10 +180,50 @@ class MerchantsApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            switch($statusCode) {
+                case 201:
+                    if ('\ClearentIntegrationsApi\Model\CreateMerchantResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ClearentIntegrationsApi\Model\CreateMerchantResponse' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ClearentIntegrationsApi\Model\CreateMerchantResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\ClearentIntegrationsApi\Model\CreateMerchantResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ClearentIntegrationsApi\Model\CreateMerchantResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -218,14 +259,27 @@ class MerchantsApi
      */
     public function createMerchantAsyncWithHttpInfo($hierarchy_node_key, $create_merchant_payload)
     {
-        $returnType = '';
+        $returnType = '\ClearentIntegrationsApi\Model\CreateMerchantResponse';
         $request = $this->createMerchantRequest($hierarchy_node_key, $create_merchant_payload);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -289,11 +343,11 @@ class MerchantsApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
+                ['application/json']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                [],
+                ['application/json'],
                 ['application/json']
             );
         }

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `createMerchant()`
 
 ```php
-createMerchant($hierarchy_node_key, $create_merchant_payload)
+createMerchant($hierarchy_node_key, $create_merchant_payload): \ClearentIntegrationsApi\Model\CreateMerchantResponse
 ```
 
 
@@ -38,7 +38,8 @@ $hierarchy_node_key = 'hierarchy_node_key_example'; // string
 $create_merchant_payload = new \ClearentIntegrationsApi\Model\CreateMerchantPayload(); // \ClearentIntegrationsApi\Model\CreateMerchantPayload
 
 try {
-    $apiInstance->createMerchant($hierarchy_node_key, $create_merchant_payload);
+    $result = $apiInstance->createMerchant($hierarchy_node_key, $create_merchant_payload);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantsApi->createMerchant: ', $e->getMessage(), PHP_EOL;
 }
@@ -53,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\ClearentIntegrationsApi\Model\CreateMerchantResponse**](../Model/CreateMerchantResponse.md)
 
 ### Authorization
 
@@ -62,7 +63,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
