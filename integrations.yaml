@@ -6,7 +6,6 @@ components:
       name: hierarchyNodeKey
       required: true
       schema:
-        example: '6588000000001003'
         type: string
   schemas:
     CreateMerchantPayload:
