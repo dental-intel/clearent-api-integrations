@@ -49,7 +49,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **hierarchy_node_key** | **string**|  |
- **create_merchant_payload** | [**\ClearentIntegrationsApi\Model\CreateMerchantPayload**](../Model/CreateMerchantPayload.md)|  | [optional]
+ **create_merchant_payload** | [**\ClearentIntegrationsApi\Model\CreateMerchantPayload**](../Model/CreateMerchantPayload.md)|  |
 
 ### Return type
 

@@ -119,13 +119,13 @@ class MerchantsApi
      * Operation createMerchant
      *
      * @param  string $hierarchy_node_key hierarchy_node_key (required)
-     * @param  \ClearentIntegrationsApi\Model\CreateMerchantPayload $create_merchant_payload create_merchant_payload (optional)
+     * @param  \ClearentIntegrationsApi\Model\CreateMerchantPayload $create_merchant_payload create_merchant_payload (required)
      *
      * @throws \ClearentIntegrationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function createMerchant($hierarchy_node_key, $create_merchant_payload = null)
+    public function createMerchant($hierarchy_node_key, $create_merchant_payload)
     {
         $this->createMerchantWithHttpInfo($hierarchy_node_key, $create_merchant_payload);
     }
@@ -134,13 +134,13 @@ class MerchantsApi
      * Operation createMerchantWithHttpInfo
      *
      * @param  string $hierarchy_node_key (required)
-     * @param  \ClearentIntegrationsApi\Model\CreateMerchantPayload $create_merchant_payload (optional)
+     * @param  \ClearentIntegrationsApi\Model\CreateMerchantPayload $create_merchant_payload (required)
      *
      * @throws \ClearentIntegrationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createMerchantWithHttpInfo($hierarchy_node_key, $create_merchant_payload = null)
+    public function createMerchantWithHttpInfo($hierarchy_node_key, $create_merchant_payload)
     {
         $request = $this->createMerchantRequest($hierarchy_node_key, $create_merchant_payload);
 
@@ -192,12 +192,12 @@ class MerchantsApi
      * Operation createMerchantAsync
      *
      * @param  string $hierarchy_node_key (required)
-     * @param  \ClearentIntegrationsApi\Model\CreateMerchantPayload $create_merchant_payload (optional)
+     * @param  \ClearentIntegrationsApi\Model\CreateMerchantPayload $create_merchant_payload (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createMerchantAsync($hierarchy_node_key, $create_merchant_payload = null)
+    public function createMerchantAsync($hierarchy_node_key, $create_merchant_payload)
     {
         return $this->createMerchantAsyncWithHttpInfo($hierarchy_node_key, $create_merchant_payload)
             ->then(
@@ -211,12 +211,12 @@ class MerchantsApi
      * Operation createMerchantAsyncWithHttpInfo
      *
      * @param  string $hierarchy_node_key (required)
-     * @param  \ClearentIntegrationsApi\Model\CreateMerchantPayload $create_merchant_payload (optional)
+     * @param  \ClearentIntegrationsApi\Model\CreateMerchantPayload $create_merchant_payload (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createMerchantAsyncWithHttpInfo($hierarchy_node_key, $create_merchant_payload = null)
+    public function createMerchantAsyncWithHttpInfo($hierarchy_node_key, $create_merchant_payload)
     {
         $returnType = '';
         $request = $this->createMerchantRequest($hierarchy_node_key, $create_merchant_payload);
@@ -248,17 +248,23 @@ class MerchantsApi
      * Create request for operation 'createMerchant'
      *
      * @param  string $hierarchy_node_key (required)
-     * @param  \ClearentIntegrationsApi\Model\CreateMerchantPayload $create_merchant_payload (optional)
+     * @param  \ClearentIntegrationsApi\Model\CreateMerchantPayload $create_merchant_payload (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createMerchantRequest($hierarchy_node_key, $create_merchant_payload = null)
+    public function createMerchantRequest($hierarchy_node_key, $create_merchant_payload)
     {
         // verify the required parameter 'hierarchy_node_key' is set
         if ($hierarchy_node_key === null || (is_array($hierarchy_node_key) && count($hierarchy_node_key) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $hierarchy_node_key when calling createMerchant'
+            );
+        }
+        // verify the required parameter 'create_merchant_payload' is set
+        if ($create_merchant_payload === null || (is_array($create_merchant_payload) && count($create_merchant_payload) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_merchant_payload when calling createMerchant'
             );
         }
 

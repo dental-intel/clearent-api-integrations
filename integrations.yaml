@@ -71,6 +71,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/CreateMerchantPayload'
+        required: true
       responses:
         '201':
           description: Created
