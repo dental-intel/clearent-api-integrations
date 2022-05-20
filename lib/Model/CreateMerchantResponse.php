@@ -59,7 +59,9 @@ class CreateMerchantResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'application_url' => 'string'
+        'application_url' => 'string',
+        'merchant' => '\ClearentIntegrationsApi\Model\CreateMerchantResponseMerchant',
+        'metadata' => '\ClearentIntegrationsApi\Model\CreateMerchantResponseMetadata'
     ];
 
     /**
@@ -70,7 +72,9 @@ class CreateMerchantResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'application_url' => null
+        'application_url' => null,
+        'merchant' => null,
+        'metadata' => null
     ];
 
     /**
@@ -100,7 +104,9 @@ class CreateMerchantResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'application_url' => 'applicationURL'
+        'application_url' => 'applicationURL',
+        'merchant' => 'merchant',
+        'metadata' => 'metadata'
     ];
 
     /**
@@ -109,7 +115,9 @@ class CreateMerchantResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'application_url' => 'setApplicationUrl'
+        'application_url' => 'setApplicationUrl',
+        'merchant' => 'setMerchant',
+        'metadata' => 'setMetadata'
     ];
 
     /**
@@ -118,7 +126,9 @@ class CreateMerchantResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'application_url' => 'getApplicationUrl'
+        'application_url' => 'getApplicationUrl',
+        'merchant' => 'getMerchant',
+        'metadata' => 'getMetadata'
     ];
 
     /**
@@ -179,6 +189,8 @@ class CreateMerchantResponse implements ModelInterface, ArrayAccess, \JsonSerial
     public function __construct(array $data = null)
     {
         $this->container['application_url'] = $data['application_url'] ?? null;
+        $this->container['merchant'] = $data['merchant'] ?? null;
+        $this->container['metadata'] = $data['metadata'] ?? null;
     }
 
     /**
@@ -225,6 +237,54 @@ class CreateMerchantResponse implements ModelInterface, ArrayAccess, \JsonSerial
     public function setApplicationUrl($application_url)
     {
         $this->container['application_url'] = $application_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchant
+     *
+     * @return \ClearentIntegrationsApi\Model\CreateMerchantResponseMerchant|null
+     */
+    public function getMerchant()
+    {
+        return $this->container['merchant'];
+    }
+
+    /**
+     * Sets merchant
+     *
+     * @param \ClearentIntegrationsApi\Model\CreateMerchantResponseMerchant|null $merchant merchant
+     *
+     * @return self
+     */
+    public function setMerchant($merchant)
+    {
+        $this->container['merchant'] = $merchant;
+
+        return $this;
+    }
+
+    /**
+     * Gets metadata
+     *
+     * @return \ClearentIntegrationsApi\Model\CreateMerchantResponseMetadata|null
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     *
+     * @param \ClearentIntegrationsApi\Model\CreateMerchantResponseMetadata|null $metadata metadata
+     *
+     * @return self
+     */
+    public function setMetadata($metadata)
+    {
+        $this->container['metadata'] = $metadata;
 
         return $this;
     }

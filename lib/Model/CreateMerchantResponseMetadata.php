@@ -1,6 +1,6 @@
 <?php
 /**
- * MerchantInformation
+ * CreateMerchantResponseMetadata
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ClearentIntegrationsApi\ObjectSerializer;
 
 /**
- * MerchantInformation Class Doc Comment
+ * CreateMerchantResponseMetadata Class Doc Comment
  *
  * @category Class
  * @package  ClearentIntegrationsApi
@@ -42,7 +42,7 @@ use \ClearentIntegrationsApi\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class MerchantInformation implements ModelInterface, ArrayAccess, \JsonSerializable
+class CreateMerchantResponseMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class MerchantInformation implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'MerchantInformation';
+    protected static $openAPIModelName = 'CreateMerchantResponse_metadata';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +59,7 @@ class MerchantInformation implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'dba_name' => 'string',
-        'email_address' => 'string'
+        'timestamp' => 'string'
     ];
 
     /**
@@ -71,8 +70,7 @@ class MerchantInformation implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'dba_name' => null,
-        'email_address' => null
+        'timestamp' => null
     ];
 
     /**
@@ -102,8 +100,7 @@ class MerchantInformation implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'dba_name' => 'dbaName',
-        'email_address' => 'emailAddress'
+        'timestamp' => 'timestamp'
     ];
 
     /**
@@ -112,8 +109,7 @@ class MerchantInformation implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'dba_name' => 'setDbaName',
-        'email_address' => 'setEmailAddress'
+        'timestamp' => 'setTimestamp'
     ];
 
     /**
@@ -122,8 +118,7 @@ class MerchantInformation implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'dba_name' => 'getDbaName',
-        'email_address' => 'getEmailAddress'
+        'timestamp' => 'getTimestamp'
     ];
 
     /**
@@ -183,8 +178,7 @@ class MerchantInformation implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['dba_name'] = $data['dba_name'] ?? null;
-        $this->container['email_address'] = $data['email_address'] ?? null;
+        $this->container['timestamp'] = $data['timestamp'] ?? null;
     }
 
     /**
@@ -196,11 +190,8 @@ class MerchantInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['dba_name'] === null) {
-            $invalidProperties[] = "'dba_name' can't be null";
-        }
-        if ($this->container['email_address'] === null) {
-            $invalidProperties[] = "'email_address' can't be null";
+        if ($this->container['timestamp'] === null) {
+            $invalidProperties[] = "'timestamp' can't be null";
         }
         return $invalidProperties;
     }
@@ -218,49 +209,25 @@ class MerchantInformation implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets dba_name
+     * Gets timestamp
      *
      * @return string
      */
-    public function getDbaName()
+    public function getTimestamp()
     {
-        return $this->container['dba_name'];
+        return $this->container['timestamp'];
     }
 
     /**
-     * Sets dba_name
+     * Sets timestamp
      *
-     * @param string $dba_name The publicly facing name of the business.
+     * @param string $timestamp timestamp
      *
      * @return self
      */
-    public function setDbaName($dba_name)
+    public function setTimestamp($timestamp)
     {
-        $this->container['dba_name'] = $dba_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets email_address
-     *
-     * @return string
-     */
-    public function getEmailAddress()
-    {
-        return $this->container['email_address'];
-    }
-
-    /**
-     * Sets email_address
-     *
-     * @param string $email_address The email address of the business.
-     *
-     * @return self
-     */
-    public function setEmailAddress($email_address)
-    {
-        $this->container['email_address'] = $email_address;
+        $this->container['timestamp'] = $timestamp;
 
         return $this;
     }

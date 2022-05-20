@@ -7,6 +7,9 @@ composer.json
 docs/Api/MerchantsApi.md
 docs/Model/CreateMerchantPayload.md
 docs/Model/CreateMerchantResponse.md
+docs/Model/CreateMerchantResponseMerchant.md
+docs/Model/CreateMerchantResponseMerchantMerchantInformation.md
+docs/Model/CreateMerchantResponseMetadata.md
 docs/Model/MerchantInformation.md
 docs/Model/SalesProfile.md
 git_push.sh
@@ -16,6 +19,9 @@ lib/Configuration.php
 lib/HeaderSelector.php
 lib/Model/CreateMerchantPayload.php
 lib/Model/CreateMerchantResponse.php
+lib/Model/CreateMerchantResponseMerchant.php
+lib/Model/CreateMerchantResponseMerchantMerchantInformation.php
+lib/Model/CreateMerchantResponseMetadata.php
 lib/Model/MerchantInformation.php
 lib/Model/ModelInterface.php
 lib/Model/SalesProfile.php
@@ -23,6 +29,9 @@ lib/ObjectSerializer.php
 phpunit.xml.dist
 test/Api/MerchantsApiTest.php
 test/Model/CreateMerchantPayloadTest.php
+test/Model/CreateMerchantResponseMerchantMerchantInformationTest.php
+test/Model/CreateMerchantResponseMerchantTest.php
+test/Model/CreateMerchantResponseMetadataTest.php
 test/Model/CreateMerchantResponseTest.php
 test/Model/MerchantInformationTest.php
 test/Model/SalesProfileTest.php

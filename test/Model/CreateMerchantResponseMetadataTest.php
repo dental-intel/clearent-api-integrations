@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateMerchantResponseTest
+ * CreateMerchantResponseMetadataTest
  *
  * PHP version 7.3
  *
@@ -31,15 +31,15 @@ namespace ClearentIntegrationsApi\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CreateMerchantResponseTest Class Doc Comment
+ * CreateMerchantResponseMetadataTest Class Doc Comment
  *
  * @category    Class
- * @description CreateMerchantResponse
+ * @description CreateMerchantResponseMetadata
  * @package     ClearentIntegrationsApi
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CreateMerchantResponseTest extends TestCase
+class CreateMerchantResponseMetadataTest extends TestCase
 {
 
     /**
@@ -71,36 +71,18 @@ class CreateMerchantResponseTest extends TestCase
     }
 
     /**
-     * Test "CreateMerchantResponse"
+     * Test "CreateMerchantResponseMetadata"
      */
-    public function testCreateMerchantResponse()
+    public function testCreateMerchantResponseMetadata()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "application_url"
+     * Test attribute "timestamp"
      */
-    public function testPropertyApplicationUrl()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "merchant"
-     */
-    public function testPropertyMerchant()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "metadata"
-     */
-    public function testPropertyMetadata()
+    public function testPropertyTimestamp()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -2,6 +2,7 @@
 components:
   parameters:
     hierarchyNodeKeyParam:
+      example: '4788000000000009'
       in: path
       name: hierarchyNodeKey
       required: true
@@ -20,10 +21,28 @@ components:
         - salesProfile
       type: object
     CreateMerchantResponse:
+      additionalProperties: false
       properties:
         applicationURL:
-          example: https://boarding-sb.clearent.net/launch-integrator-setup/merchant/680eccd8-5836-410d-a632-ffad378e3ee9
-          type: string
+          $ref: '#/components/schemas/applicationURL'
+        merchant:
+          additionalProperties: false
+          properties:
+            merchantInformation:
+              additionalProperties: false
+              properties:
+                merchantNumber:
+                  $ref: '#/components/schemas/merchantNumber'
+              type: object
+          type: object
+        metadata:
+          additionalProperties: false
+          properties:
+            timestamp:
+              $ref: '#/components/schemas/timestamp'
+          required:
+            - timestamp
+          type: object
       type: object
     MerchantInformation:
       additionalProperties: false
@@ -44,15 +63,27 @@ components:
       required:
         - mccCode
       type: object
+    applicationURL:
+      example: https://boarding-sb.clearent.net/launch-integrator-setup/merchant/680eccd8-5836-410d-a632-ffad378e3ee9
+      type: string
     dbaName:
+      description: The publicly facing name of the business.
       example: Pizza and Joints Family Restaurant
       type: string
     emailAddress:
+      description: The email address of the business.
       example: tphillips@dentalintel.com
       type: string
     mccCode:
       description: The Merchant Category Code (MCC) of the merchant. The MCC is a 4-digit number used to classify merchants and businesses by the type of goods or services provided.
       example: '8021'
+      type: string
+    merchantNumber:
+      description: The number that identifies the merchant within the Clearent system.
+      example: '8582949932024942'
+      type: string
+    timestamp:
+      example: '2022-05-20T20:10:21.4787044Z'
       type: string
   securitySchemes:
     AccessKeyAuth:

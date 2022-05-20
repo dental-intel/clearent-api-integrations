@@ -61,7 +61,7 @@ $apiInstance = new ClearentIntegrationsApi\Api\MerchantsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$hierarchy_node_key = 'hierarchy_node_key_example'; // string
+$hierarchy_node_key = 4788000000000009; // string
 $create_merchant_payload = new \ClearentIntegrationsApi\Model\CreateMerchantPayload(); // \ClearentIntegrationsApi\Model\CreateMerchantPayload
 
 try {
@@ -85,6 +85,9 @@ Class | Method | HTTP request | Description
 
 - [CreateMerchantPayload](docs/Model/CreateMerchantPayload.md)
 - [CreateMerchantResponse](docs/Model/CreateMerchantResponse.md)
+- [CreateMerchantResponseMerchant](docs/Model/CreateMerchantResponseMerchant.md)
+- [CreateMerchantResponseMerchantMerchantInformation](docs/Model/CreateMerchantResponseMerchantMerchantInformation.md)
+- [CreateMerchantResponseMetadata](docs/Model/CreateMerchantResponseMetadata.md)
 - [MerchantInformation](docs/Model/MerchantInformation.md)
 - [SalesProfile](docs/Model/SalesProfile.md)
 
